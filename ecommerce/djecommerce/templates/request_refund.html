@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block head_title %}Sherif E-commerce {% endblock %}
+
+
+
+{% block content %}
+
+  
+
+
+  <!--Main layout-->
+  <main>
+    <div class="container">
+
+      <h2>Request Refund </h2>
+    <form action="{% url 'djecommerce:request-refund' %}" method="post">
+        {% csrf_token %}
+        
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Ref code</label>
+            {% comment %} <input type="password" class="form-control" id="exampleInputPassword1"> {% endcomment %}
+            {{form.ref_code}}
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Message</label>
+            {% comment %} <textarea class="form-control" id="exampleInputPassword1"></textarea> {% endcomment %}
+            {{form.message}}
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            {% comment %} <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> {% endcomment %}
+            {{form.email}}
+            
+          </div>
+          
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+            
+          </div>
+      
+
+      
+    </div>
+  </main>
+  <!--Main layout-->
+
+  {% endblock content %}
