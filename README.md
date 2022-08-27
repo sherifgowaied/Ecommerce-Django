@@ -29,3 +29,48 @@ https://user-images.githubusercontent.com/91483223/187027899-02fbeae4-2515-466d-
 
 https://user-images.githubusercontent.com/91483223/187027998-aa6f91b1-aa7a-400a-838e-0249b548e6ea.mov
 
+## Running this project
+
+To get this project up and running you should start by having Python installed on your computer. It's advised you create a virtual environment to store your projects dependencies separately. You can install virtualenv with
+
+```
+pip install virtualenv
+```
+
+
+
+```
+virtualenv env
+```
+
+That will create a new folder `env` in your project directory. Next activate it with this command on mac/linux:
+
+```
+source env/bin/active
+```
+
+Then install the project dependencies with
+
+```
+pip3 install -r requirements.txt
+```
+
+```
+python3 manage.py makemigrations
+```
+
+```
+python manage.py migrate
+```
+
+Now you can run the project with this command
+
+```
+python manage.py runserver
+```
+
+**Note** if you want payments to work you will need to enter your own Stripe API keys into the `.env` file in the settings files.
+
+---
+
+
